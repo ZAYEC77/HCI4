@@ -119,5 +119,10 @@ namespace HCI4
         {
             Selected.Paste();
         }
+
+        private void друкToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Selected.Print();
+        }
     }
 }

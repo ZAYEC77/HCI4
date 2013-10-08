@@ -248,8 +248,28 @@ namespace HCI4
         }
 
 
-        private void Print()
+        public void Print()
         {
-        }
+            if (printDialog1.ShowDialog() == DialogResult.OK)
+				printDocument1.Print();
+		}
+        private int checkPrint;
+        
+		private void printDocument1_BeginPrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+		{
+			checkPrint = 0;
+		}
+
+		private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+		{
+			
+            checkPrint = richTextBox.Print(checkPrint, richTextBox.TextLength, e);
+
+            if (checkPrint < richTextBox.TextLength)
+				e.HasMorePages = true;
+			else
+				e.HasMorePages = false;
+		}
+             
     }
 }
