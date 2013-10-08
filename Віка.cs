@@ -270,6 +270,28 @@ namespace HCI4
 			else
 				e.HasMorePages = false;
 		}
+
+        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void лівоToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            richTextBox.SelectionAlignment = HorizontalAlignment.Left;
+        }
+
+        private void центерToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            richTextBox.SelectionAlignment = HorizontalAlignment.Center;
+        }
+
+        private void правоToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            richTextBox.SelectionAlignment = HorizontalAlignment.Right;
+        }
              
     }
 }
